@@ -5,5 +5,7 @@ export function removeTask (index:number) {
     if (todoLines.length >= index) {
         todoLines.splice(index-1, 1);
         fs.writeFileSync('todos.txt', todoLines.join('\n'), 'utf8');
-    } 
+    } else {
+        console.log('Unable to remove: index is out of bound');
+    }
 }
