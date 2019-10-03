@@ -2,10 +2,9 @@
 
 import { listTasks } from './list-tasks';
 import { addNewTask } from './add-new-task';
+import { removeTask } from './remove-task';
 
-const args: string[] = process.argv; //for using command line arguments. Don't forget that it is a string array w/ atleast 2 elements already!!!
-
-
+const args: string[] = process.argv;
 
 function printUsage () {
     if (args.length === 2) {
@@ -22,7 +21,7 @@ function printUsage () {
             console.log('Unable to add: no task provided');
         }
     } else if (args[2] === '-r'){
-        // here comes the call for a function
+        removeTask(parseInt(args[3]));
     } else if (args[2] === '-l'){
         // here comes the call for a function
     } else {
