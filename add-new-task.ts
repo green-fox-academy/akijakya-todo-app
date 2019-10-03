@@ -1,10 +1,28 @@
 const fs = require ('fs');
 
 export function addNewTask (todo:string) {
-    let todoLines:string [] = fs.readFileSync('todos.txt', 'utf8').split('\n');
+    let todoLines:string [] = [];
+
+    try {
+        todoLines = fs.readFileSync('todos.txt', 'utf8').split('\n');
+    }
+    catch (e) {
+        console.log('Error: ', e);
+    }
+
     if (todoLines.length <= 1 && todoLines[0] === '') {
-        fs.appendFileSync('todos.txt', '[ ] ' + todo, 'utf8');
+        try {
+            fs.appendFileSync('todos.txt', '[ ] ' + todo, 'utf8');
+        }
+        catch (e) {
+            console.log('Error: ', e);
+        }
     } else {
-        fs.appendFileSync('todos.txt', '\n[ ] ' + todo, 'utf8');
+        try {
+            fs.appendFileSync('todos.txt', '\n[ ] ' + todo, 'utf8');
+        }
+        catch (e) {
+            console.log('Error: ', e);
+        }
     }
 }

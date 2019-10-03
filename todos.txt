@@ -1,3 +1,2 @@
-[ ] Feed the monkey1
 [x] Feed the monkey2
-[ ] Feed the monkey3
+[ ] Take out trash
