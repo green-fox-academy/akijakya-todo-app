@@ -1,5 +1,7 @@
 'use strict';
 
+import { listTasks } from './list-tasks';
+
 const args: string[] = process.argv; //for using command line arguments. Don't forget that it is a string array w/ atleast 2 elements already!!!
 
 
@@ -11,7 +13,7 @@ function printUsage () {
         console.log('Command line arguments:');
         console.log('    -l    Lists all the tasks\n    -a    Adds a new task\n    -r    Removes a task\n    -c    Completes a task');
     } else if (args[2] === '-l'){
-        // here comes the call for a function
+        listTasks();
     } else if (args[2] === '-a'){
         // here comes the call for a function
     } else if (args[2] === '-r'){
