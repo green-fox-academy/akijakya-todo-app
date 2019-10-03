@@ -34,7 +34,13 @@ function printUsage () {
         }
         
     } else if (args[2] === '-c') {
-        checkTask(parseInt(args[3]));
+        if (args[3] !== undefined && isNaN(parseInt(args[3])) === false) {
+            checkTask(parseInt(args[3]));
+        } else if (args[3] !== undefined && isNaN(parseInt(args[3])) === true) {
+            console.log('Unable to check: index is not a number');
+        } else {
+            console.log('Unable to check: no index provided');
+        }
     
     } else {
         console.log('Unsupported argument');
