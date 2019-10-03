@@ -16,7 +16,11 @@ function printUsage () {
     } else if (args[2] === '-l'){
         listTasks();
     } else if (args[2] === '-a'){
-        addNewTask(args[3]);
+        if (args[3] !== undefined) {
+            addNewTask(args[3]);
+        } else {
+            console.log('Unable to add: no task provided');
+        }
     } else if (args[2] === '-r'){
         // here comes the call for a function
     } else if (args[2] === '-l'){
