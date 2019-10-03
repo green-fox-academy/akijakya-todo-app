@@ -1,6 +1,7 @@
 'use strict';
 
 import { listTasks } from './list-tasks';
+import { addNewTask } from './add-new-task';
 
 const args: string[] = process.argv; //for using command line arguments. Don't forget that it is a string array w/ atleast 2 elements already!!!
 
@@ -15,7 +16,7 @@ function printUsage () {
     } else if (args[2] === '-l'){
         listTasks();
     } else if (args[2] === '-a'){
-        // here comes the call for a function
+        addNewTask(args[3]);
     } else if (args[2] === '-r'){
         // here comes the call for a function
     } else if (args[2] === '-l'){
