@@ -36,7 +36,7 @@ function printUsage () {
         // here comes the call for a function
     
     } else {
-        console.log('this is the error handling');
+        console.log('Unsupported argument');
   }
 }
 
