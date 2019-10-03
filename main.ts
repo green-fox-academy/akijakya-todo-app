@@ -12,18 +12,29 @@ function printUsage () {
         console.log('=============================\n');
         console.log('Command line arguments:');
         console.log('    -l    Lists all the tasks\n    -a    Adds a new task\n    -r    Removes a task\n    -c    Completes a task');
-    } else if (args[2] === '-l'){
+    
+    } else if (args[2] === '-l') {
         listTasks();
-    } else if (args[2] === '-a'){
+
+    } else if (args[2] === '-a') {
         if (args[3] !== undefined) {
             addNewTask(args[3]);
         } else {
             console.log('Unable to add: no task provided');
         }
-    } else if (args[2] === '-r'){
-        removeTask(parseInt(args[3]));
-    } else if (args[2] === '-l'){
+
+    } else if (args[2] === '-r') {
+        if (args[3] !== undefined && isNaN(parseInt(args[3])) === false) {
+            removeTask(parseInt(args[3]));
+        } else if (args[3] !== undefined && isNaN(parseInt(args[3])) === true) {
+            console.log('Unable to remove: index is not a number');
+        } else {
+            console.log('Unable to remove: no index provided');
+        }
+        
+    } else if (args[2] === '-l') {
         // here comes the call for a function
+    
     } else {
         console.log('this is the error handling');
   }
