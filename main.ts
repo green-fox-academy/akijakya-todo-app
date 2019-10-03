@@ -3,6 +3,7 @@
 import { listTasks } from './list-tasks';
 import { addNewTask } from './add-new-task';
 import { removeTask } from './remove-task';
+import { checkTask } from './check-task';
 
 const args: string[] = process.argv;
 
@@ -32,8 +33,8 @@ function printUsage () {
             console.log('Unable to remove: no index provided');
         }
         
-    } else if (args[2] === '-l') {
-        // here comes the call for a function
+    } else if (args[2] === '-c') {
+        checkTask(parseInt(args[3]));
     
     } else {
         console.log('Unsupported argument');
